@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+  min-height: 100dvh;
+  width: 100%;
+  height: max-content;
+  position: relative;
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.Container {
+  width: 100%;
+  height: auto;
+  max-width: 1440px;
+  padding: 0 16px;
+}

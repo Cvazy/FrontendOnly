@@ -1,0 +1,114 @@
+@import "shared/assets/styles/scss/mixins";
+
+.Container {
+  align-items: center;
+}
+
+.Container,
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+
+  @include respondedTo(767px) {
+    gap: 32px;
+  }
+
+  @include respondedTo(1024px) {
+    gap: 48px;
+  }
+
+  @include respondedTo(1280px) {
+    gap: 64px;
+  }
+
+  @include respondedTo(1440px) {
+    gap: 80px;
+  }
+}
+
+.Wrapper {
+  align-items: flex-start;
+}
+
+.Event {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+  .Year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(16px, 1.375vw, 25px);
+    line-height: 120%;
+    text-align: left;
+    color: #3877EE;
+  }
+
+  .Description {
+    font-size: clamp(14px, 1.375vw, 20px);
+    line-height: 145%;
+    text-align: left;
+    color: #42567A;
+  }
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.5vw;
+  height: 6.5vw;
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 20px;
+  min-height: 20px;
+  border: none;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: #FFFFFF;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(56, 119, 238, 0.1);
+
+  @include respondedBy(767px) {
+    display: none;
+  }
+
+  img {
+    user-select: none;
+    width: .75vw;
+    height: 1.5vw;
+    max-width: 6.25px;
+    max-height: 12.5px;
+    min-width: 3.12px;
+    min-height: 6.25px;
+
+    @include respondedTo(1280px) {
+      max-width: none;
+    }
+  }
+
+  &:nth-child(1) {
+    img {
+      rotate: 180deg;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+:global {
+  .swiper-slide {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+
+    @include respondedBy(767px) {
+      &:not(.swiper-slide-active) {
+        opacity: 0.5;
+      }
+    }
+  }
+}
